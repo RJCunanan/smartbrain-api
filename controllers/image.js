@@ -1,10 +1,10 @@
 const returnClarifaiRequestOptions = (imageUrl) => {
     // Your PAT (Personal Access Token) can be found in the Account's Security section
-    const PAT = '6a1673436d4a4674967c428826de7f78';
+    const PAT = process.env.CLARIFAI_PAT;   // NOTE: environmental variables can be found on heroku
     // Specify the correct user_id/app_id pairings
     // Since you're making inferences outside your app's scope
-    const USER_ID = 'nocturtle';       
-    const APP_ID = 'smartbrain';
+    const USER_ID = process.env.CLARIFAI_USER_ID;       
+    const APP_ID = process.env.CLARIFAI_APP_ID;
     const IMAGE_URL = imageUrl;
   
     const raw = JSON.stringify({
